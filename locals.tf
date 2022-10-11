@@ -10,7 +10,7 @@ locals {
     billing_code = var.billing_code
     environment  = terraform.workspace
   }
-  s3_bucket_name = "${local.naming_prefix}-${random_integer.rand.result}"
+  s3_bucket_name = "${local.naming_prefix}-${terraform.workspace}-${random_integer.rand.result}"
   naming_prefix  = "${var.naming_prefix}-${terraform.workspace}"
 }
 
